@@ -63,3 +63,18 @@ Different types of error functions:
     getError
 
 Template cannot take validations from functions like model-driven. A directive has to be created from the function to use it for template forms.
+
+Dynamic Forms [In Reactive Froms]
+{
+    name:'',
+    email:'',
+    address:[           -> FormArray
+        {
+            city:'',
+            state:'',
+            pincode:''
+        }
+    ]
+}
+
+DIRECTIVES

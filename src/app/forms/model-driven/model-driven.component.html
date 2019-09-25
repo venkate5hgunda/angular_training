@@ -19,12 +19,13 @@
         <input type="text" formControlName="state" />
         <label>Pincode</label>
         <input type="text" formControlName="pincode" />
-        <div *ngIf="addressObj.get('pincode').touched">
+        <app-show-errors [ctrl]="addressObj.get('pincode')"></app-show-errors>
+        <!-- <div *ngIf="addressObj.get('pincode').touched">
             <span *ngIf="addressObj.get('pincode').hasError('zipCode')">
                 Pincode not valid. Should be 
                 {{ addressObj.get('pincode').getError('zipCode').allowedCode }}
             </span>
-        </div>
+        </div> -->
     </div>
     <button class="button-secondary pure-button" type="submit">Submit</button>
 </form>

@@ -1,0 +1,6 @@
+<div *ngIf="shouldShowErrors()">
+    <span *ngFor="let msg of listOfErrors()">
+        {{msg}}
+    </span>
+</div>
+

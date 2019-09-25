@@ -12,9 +12,10 @@
     <br>
     <label>Pincode</label>
     <input type="text" name="pincode" ngModel required appZipCode #pincode="ngModel" />
-    <div *ngIf="pincode.touched||pincode.dirty">
-            <span *ngIf="pincode.hasError('zipCode')">Zipcode invalid. Should be {{pincode.getError('zipCode').allowedCode}}</span>
-        </div>
+    <app-show-errors [ctrl]="pincode"></app-show-errors>
+    <!-- <div *ngIf="pincode.touched||pincode.dirty">
+        <span *ngIf="pincode.hasError('zipCode')">Zipcode invalid. Should be {{pincode.getError('zipCode').allowedCode}}</span>
+    </div> -->
     <br>
     <button class="button-secondary pure-button" type="submit">Submit</button>
 </form>

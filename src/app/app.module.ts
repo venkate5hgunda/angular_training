@@ -11,6 +11,9 @@ import { ConversionPipe } from './pipes/conversion.pipe';
 import { TemplateDrivenComponent } from './forms/template-driven/template-driven.component';
 import { ModelDrivenComponent } from './forms/model-driven/model-driven.component';
 import { ZipCodeDirective } from './directives/zip-code.directive';
+import { ShowErrorsComponent } from './forms/show-errors/show-errors.component';
+import { DynamicFormsComponent } from './forms/dynamic-forms/dynamic-forms.component';
+import { ImgFallbackDirective } from './directives/img-fallback.directive';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { ZipCodeDirective } from './directives/zip-code.directive';
     ConversionPipe,
     TemplateDrivenComponent,
     ModelDrivenComponent,
-    ZipCodeDirective
+    ZipCodeDirective,
+    ShowErrorsComponent,
+    DynamicFormsComponent,
+    ImgFallbackDirective
   ],
   imports: [
     // Register Modules whose functionality needs to be used

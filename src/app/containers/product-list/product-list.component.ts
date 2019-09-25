@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit {
       productName: 'AnImage',
       productPrice: 100,
       productStock: false,
-      productImage: 'assets/1_Uzuu7tDhnkV7KUd4N0yfPA.png'
+      productImage: 'assets/1_Uzuu7tDhnkV7KUd4N0yfPA1.png'
     },
     {
       productId: 200,
