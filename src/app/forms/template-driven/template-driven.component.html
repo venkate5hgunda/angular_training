@@ -1,0 +1,20 @@
+<button type="button" (click)="loadData(userForm)">Load Data</button> <!-- (click)="patchData(userForm)" to fill partial form Data -->
+<form (submit)="saveData(userForm)" #userForm="ngForm" >
+    <label>Name</label>
+    <input type="text" name="name" minlength="5" ngModel required #name="ngModel" />
+    <br>
+    <div *ngIf="name.touched||name.dirty">
+        <span *ngIf="name.hasError('required')">Name is required</span>
+        <span *ngIf="name.hasError('minlength')">Minimum Length is required</span>
+    </div>
+    <label>Email-Address</label>
+    <input type="email" name="email" ngModel required />
+    <br>
+    <label>Pincode</label>
+    <input type="text" name="pincode" ngModel required appZipCode #pincode="ngModel" />
+    <div *ngIf="pincode.touched||pincode.dirty">
+            <span *ngIf="pincode.hasError('zipCode')">Zipcode invalid. Should be {{pincode.getError('zipCode').allowedCode}}</span>
+        </div>
+    <br>
+    <button class="button-secondary pure-button" type="submit">Submit</button>
+</form>

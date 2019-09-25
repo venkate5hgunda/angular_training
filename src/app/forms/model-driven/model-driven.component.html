@@ -1,0 +1,33 @@
+<form [formGroup]="userForm">
+    <div *ngIf="userForm.get('name').touched">
+        <span *ngIf="userForm.get('name').hasError('required')">Value Required</span>
+    </div>
+    <label>Name</label>
+    <input type="text" formControlName="name" />
+    <br>
+    <label>Email</label>
+    <input type="email" formControlName="email" />
+    <br>
+    <label>Address</label>
+    <div formGroupName="address" class="table" >
+        <div *ngIf="addressObj.get('city').touched">
+            <span *ngIf="addressObj.get('city').hasError('required')">City is Required</span>
+        </div>
+        <label>City</label>
+        <input type="text" formControlName="city"  />
+        <label>State</label>
+        <input type="text" formControlName="state" />
+        <label>Pincode</label>
+        <input type="text" formControlName="pincode" />
+        <div *ngIf="addressObj.get('pincode').touched">
+            <span *ngIf="addressObj.get('pincode').hasError('zipCode')">
+                Pincode not valid. Should be 
+                {{ addressObj.get('pincode').getError('zipCode').allowedCode }}
+            </span>
+        </div>
+    </div>
+    <button class="button-secondary pure-button" type="submit">Submit</button>
+</form>
+
+<pre>{{ userForm.value | json }}</pre>
+<pre>{{ addressObj.get('pincode').errors | json }}</pre>

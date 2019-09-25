@@ -1,0 +1,3 @@
+<div *ngFor="let item of pList">
+    <app-product [pData]="item" (btnClick)="removeItems(item)" [currCode]="currency"></app-product>
+</div>

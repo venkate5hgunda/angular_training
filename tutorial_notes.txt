@@ -1,0 +1,65 @@
+1. Components
+    <p></p>
+    <test></test>
+        Helps in keeping the codebase modularized
+2. Directives
+    <p id="" test=""></p>
+        Extending the functionality of Components.
+3. Pipes
+    Data Transformation/Formatting
+4. Services
+    > Entire Business logic is written in services.
+    > API Calls
+    > Data Sharing/State Management/Session Management
+
+
+COMMANDS CHEATSHEET:
+    ng generate/g component name-of-component
+                  directive 
+                  pipe
+                  service
+                  class
+                  module
+
+Make Components in two ways:
+SMART Components : Logical
+DUMB Components : Presentation
+^----Parent-Child relationship [Two-way communication]
+
+Parent-to-Child Interaction : @Input Property
+Child-to-Parent Interaction : @Output Property
+
+PIPES: Only changes the presentation layer/virtual data. Does not modify the actual data.
+    input | function:inputParameter2:inputParameter3:inputParameter4:....
+
+FORMS: @angular/forms
+    Template driven forms : FormsModule
+    Reactive forms/ model driven forms : ReactiveFormsModule
+
+FORM STATES
+    valid & invalid: all validations of field/forms
+    touched & untouched: on focus of field/forms
+    dirty & pristine: change in value of field/form
+    errors : evaluating the type of the error occurred
+
+Inbuilt validations for Forms:
+    required
+    minlength
+    maxlength
+    min
+    max
+    email
+    pattern
+
+Model-driven forms:
+{               ->  formgroup
+    name: ''    -> formcontrol
+    email: ''
+}
+
+Different types of error functions:
+    errors
+    hasError
+    getError
+
+Template cannot take validations from functions like model-driven. A directive has to be created from the function to use it for template forms.
