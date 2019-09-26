@@ -77,4 +77,34 @@ Dynamic Forms [In Reactive Froms]
     ]
 }
 
-DIRECTIVES
+CUSTOM DIRECTIVES
+no notes
+
+SERVICES:
+    Promise: Native JS
+    Observable: rxJS : recommended [Entire Angular is based on rxJS]
+SAMSUNG -> Should be able to send 11 request instead of 7 if the person is typing faster than service call.
+    waiting time : cancel after some time
+    debounce : should skip some requests
+    retry : resend the request if fails
+    observer pattern : pub sub
+
+    HOT Observable : instant updates : data sharing
+    COLD observable : http call
+
+@angular/common/
+
+CONSTRUCTOR LIFECYCLE HOOKS
+
+Use spread operator instead of push for arrays: arr.push(newData) should be [...arr,newData]
+
+Services registered in app.module.ts is singleton [global]. Local registration should be done at Component level.
+Services are used for:
+    business logic
+    API Calls
+    data sharing/state Management
+
+
+Feature Modules
+    APP : module : lean 
+        : component : [no responsibility except rendering] : root : layout

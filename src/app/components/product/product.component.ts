@@ -12,7 +12,7 @@ export class ProductComponent implements OnInit {
   @Output() btnClick = new EventEmitter();
   @Input() currCode: string = 'INR';
 
-  
+  fallbackImageUrl: string = 'assets/1a6d6f295da9f97bb576ff486ed81389_400x400.png';
 
   constructor() { }
 

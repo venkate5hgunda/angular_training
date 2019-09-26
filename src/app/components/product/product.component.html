@@ -1,5 +1,5 @@
 <div>
-    <img [src]="pData.productImage" class="img-fluid col-6" appImgFallback />
+    <img [src]="pData.productImage" class="img-fluid col-6"  [appImgFallback]="fallbackImageUrl" />
     <h3>{{ pData.productName | uppercase }}</h3>
     <h3>{{ pData.productPrice | conversion | currency:currCode:'symbol':'2.1' }}</h3>
     <button (click)="itemClicked()" *ngIf="pData.productStock;else nostock">Add To Cart</button>

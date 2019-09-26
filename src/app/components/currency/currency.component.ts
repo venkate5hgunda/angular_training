@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { CurrencyService } from 'src/app/services/currency.service';
 
 @Component({
   selector: 'app-currency',
@@ -7,15 +8,16 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class CurrencyComponent implements OnInit {
 
-  currencies: string[] = ['INR','USD','GBP','AUD'];
-  @Output() selectedCurrency = new EventEmitter();
+  currencies: string[] = ['INR', 'USD', 'GBP', 'AUD'];
+  // @Output() selectedCurrency = new EventEmitter();
 
   currencySelected(currencySelection) {
     console.log('currency change', currencySelection);
-    this.selectedCurrency.emit({currencySelection});
+    // this.selectedCurrency.emit({currencySelection}); // Using DataSharingService instead of emitting
+    this.cService.updateCurrency(currencySelection);
   }
 
-  constructor() { }
+  constructor(private cService: CurrencyService) { }
 
   ngOnInit() {
   }
